@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/function-composition/
 /**
  * @param {Function[]} functions
  * @return {Function}
@@ -15,7 +16,21 @@ const compose = function(functions) {
     };
 };
 
+// It can be also done with a for loop and will work faster
+// const compose = function(functions) {
+//     if (!functions.length) {
+//         return (x) => x;
+//     }
+//
+//     return (x) => {
+//         for(let i = functions.length -1; i >= 0; i--) {
+//             x = functions[i](x);
+//         }
+//
+//         return x;
+//     }
+// };
 
 const fn = compose([x => x + 1, x => 2 * x])
-console.log(fn(1)); // 4
+console.log(fn(1)); // 3
 console.log(fn(15)); // 31
