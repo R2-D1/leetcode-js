@@ -1,8 +1,9 @@
+// https://leetcode.com/problems/allow-one-function-call/submissions/
 /**
  * @param {Function} fn
  * @return {Function}
  */
-var once = function(fn) {
+const once = function(fn) {
     let fnCopy = fn;
     let called = false;
     return function(...args){
